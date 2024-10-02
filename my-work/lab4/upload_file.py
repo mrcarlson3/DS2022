@@ -1,17 +1,18 @@
 #!/Users/michaelcarlson/anaconda3/bin/python
 
 import boto3
+import urllib.request
 
 s3 = boto3.client('s3', region_name="us-east-1")
 
 bucket = 'ds2022-mjy7nw'
 
-import urllib.request
+url = 'https://i.pinimg.com/736x/de/71/bb/de71bb8a57ff473cc58ebc6af58c4858.jpg'
+local_file = 'pug.jpg'
 
-url = 'https://i.redd.it/t09mg0nuf84c1.jpeg'
-local_file = 'pug.jpeg'
 urllib.request.urlretrieve(url, local_file)
-resp = s3.put_object(
+
+s3.put_object(
     Body = local_file,
     Bucket = bucket,
     ACL = 'public-read',
@@ -20,7 +21,7 @@ resp = s3.put_object(
 
 # vars needed
 bucket_name = 'ds2022-mjy7nw'
-object_name = 'pug.jpeg'
+object_name = 'pug.jpg'
 expires_in = 604800
 
 response = s3.generate_presigned_url(
