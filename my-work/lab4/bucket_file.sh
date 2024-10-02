@@ -2,7 +2,7 @@
 
 curl  https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMYGAiWWkQeEvx5Y-eKQ5iT0ZFzHhV-mE3EQ&s > pesto.jpeg
 
-aws s3 cp pesto.jpeg s3://ds2022-mjy7nw/
+aws s3 cp --acl pesto.jpeg s3://ds2022-mjy7nw/
 
 aws s3 presign --expires-in 604800  s3://ds2022-mjy7nw/pesto.jpeg
 
