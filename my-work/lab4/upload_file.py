@@ -12,11 +12,12 @@ local_file = 'duck.gif'
 
 urllib.request.urlretrieve(url, local_file)
 
-resp = s3.put_object(
+s3.put_object(
     Body = local_file,
     Bucket = bucket,
     ACL = 'public-read',
-    Key = local_file
+    ContentType='image/gif',
+    Key = local_file  
 )
 
 # vars needed
