@@ -33,4 +33,4 @@ response = s3.generate_presigned_url(
 
 print(response)
 
-# https://ds2022-mjy7nw.s3.amazonaws.com/pumpkin.jpg?AWSAccessKeyId=AKIA6IY36ALUF7HDEIRC&Signature=nzVXyswU1nE4qGN75%2B0JHg2lUx0%3D&Expires=1728504043
+# https://ds2022-mjy7nw.s3.amazonaws.com/pumpkin.jpg?AWSAccessKeyId=AKIA6IY36ALUF7HDEIRC&Signature=ON4dkWv9uld4SZqpTzqGJ9h0s6o%3D&Expires=1728576343
