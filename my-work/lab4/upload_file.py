@@ -13,7 +13,7 @@ local_file = 'pumpkin.jpg'
 urllib.request.urlretrieve(url, local_file)
 
 s3.put_object(
-    Body = local_file,
+    Body=open(local_file, 'rb'),
     Bucket = bucket,
     ACL = 'public-read',
     ContentType='image/jpg',
